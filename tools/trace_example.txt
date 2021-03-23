@@ -418,7 +418,7 @@ trace -I 'linux/fs.h' \
       'p::uprobe_register(struct inode *inode) "a_ops = %llx", inode->i_mapping->a_ops'
         Trace the uprobe_register inode mapping ops, and the symbol can be found
         in /proc/kallsyms
-trace -I 'kernel/sched/sched.h' \
+trace -I 'linux/sched.h' \
       'p::__account_cfs_rq_runtime(struct cfs_rq *cfs_rq) "%d", cfs_rq->runtime_remaining'
         Trace the cfs scheduling runqueue remaining runtime. The struct cfs_rq is defined
         in kernel/sched/sched.h which is in kernel source tree and not in kernel-devel
